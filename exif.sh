@@ -31,8 +31,6 @@ do #Read all exif from the out folder and filter them
                 echo "Image $I has not enough exif data!"
         fi
 done
-#DATE=`echo "$DATETIME" | cut -d ' ' -f1 | sed s/:/-/g`
-#TIME=`echo "$DATETIME" | cut -d ' ' -f2`
 
 hdfs dfs -put -f "$TMPPATH/final/exif.csv" "/user/$USER/data/exif.csv"
 
